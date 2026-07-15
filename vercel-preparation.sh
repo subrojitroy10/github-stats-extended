@@ -17,3 +17,10 @@ pnpm install
 pnpm build:frontend
 mkdir -p apps/backend/.vercel/output/static/frontend/
 cp -RP apps/frontend/build/. apps/backend/.vercel/output/static/frontend/
+
+# Copy the built api.func function to specific subpath routes to enable original URL routing
+mkdir -p apps/backend/.vercel/output/functions/api/
+cp -RP apps/backend/.vercel/output/functions/api.func/ apps/backend/.vercel/output/functions/api/top-langs.func/
+cp -RP apps/backend/.vercel/output/functions/api.func/ apps/backend/.vercel/output/functions/api/gist.func/
+cp -RP apps/backend/.vercel/output/functions/api.func/ apps/backend/.vercel/output/functions/api/pin.func/
+cp -RP apps/backend/.vercel/output/functions/api.func/ apps/backend/.vercel/output/functions/api/wakatime.func/
